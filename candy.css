@@ -1,0 +1,78 @@
+body {
+    background: url("./background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    position: relative; /* Ensure the pseudo-element positions relative to the body */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Make sure body covers the full viewport height */
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black layer */
+    z-index: 1; /* Ensure this layer stays beneath all other content */
+    pointer-events: none; /* Prevent interactions with this layer */
+}
+
+.white {
+    color: white;
+}
+
+#logo, #board, h1, h2, div {
+    position: relative;
+    z-index: 3; /* Ensure content appears above the overlay */
+}
+
+#logo {
+    margin: 0px auto 0; /* Auto centers horizontally, 20px margin on top */;
+    width: 300px; /* Adjust as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    padding: 10px; /* Add some padding to create space around the logo */
+    border-radius: 10px; /* Optional: to round the corners */
+}
+
+#logo img {
+    width: 100%; /* Ensure the image scales to fit the div */
+}
+
+#board {
+    width: 450px;
+    height: 450px;
+    background-color: lightblue;
+    border: 5px solid slategray;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#board img {
+    width: 50px;
+    height: 50px;
+}
+
+.sixtyfour {
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 0,
+      "SCAN" 0,
+      "XELA" 0,
+      "YELA" 0;
+  }
+
+  .item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
